@@ -6,8 +6,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class KafkaConsumer {
 
-    @KafkaListener(topics = "my-topic" ,groupId = "my-consumer-group")
-    public void listen(String message){
-        System.out.println("Received Message: "+ message);
+    @KafkaListener(topics = "my-topic" ,groupId = "my-consumer-group1")
+    public void listen1(String message){
+        System.out.println("Received Message: "+ message+ "my-consumer-group1");
+    }
+
+    @KafkaListener(topics = "my-topic" ,groupId = "my-consumer-group1")
+    public void listen2(String message){
+        System.out.println("Received Message: "+ message+"my-consumer-group2");
     }
 }

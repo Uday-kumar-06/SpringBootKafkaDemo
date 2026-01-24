@@ -28,7 +28,7 @@ public class KafkaProducer {
     public String sendMessage(@RequestParam String message){
         RiderLocation riderLocation = new RiderLocation("rider123",28.61,77.23);
 
-        kafkaTemplate.send("my-topic", riderLocation);
+        kafkaTemplate.send("my-new-topic-2", riderLocation);
         return "Message sent: "+ riderLocation.getRiderId();
     }
 

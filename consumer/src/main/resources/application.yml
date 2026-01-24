@@ -3,9 +3,15 @@ spring:
     name: consumer
 
   kafka:
-   consumer:
-     bootstrap-servers: localhost:9092
-
+    consumer:
+      bootstrap-servers: localhost:9092
+#      group-id: my-new-group-rider
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: com.example.consumer.model
+        spring.json.value.default.type: com.example.consumer.model.RiderLocation
+        spring.json.use.type.headers: false
 
 server:
   port: 8081

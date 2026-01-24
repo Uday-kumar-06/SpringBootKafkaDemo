@@ -1,4 +1,4 @@
-package com.demo.producer.model;
+package com.example.consumer.model;
 
 public class RiderLocation {
 

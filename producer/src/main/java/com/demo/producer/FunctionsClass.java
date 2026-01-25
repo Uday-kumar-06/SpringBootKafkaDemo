@@ -10,7 +10,7 @@ import java.util.function.Function;
 public class FunctionsClass {
 
     @Bean
-    public Function<String,String> upperCase(){
+    public Function<String,String> uppercase(){
         return value -> value.toUpperCase();
     }
 }
